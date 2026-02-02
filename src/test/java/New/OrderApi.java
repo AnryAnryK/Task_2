@@ -79,7 +79,6 @@ public class OrderApi extends OrderBase {
 	}
 
 	@Step("получить список заказов конкретного пользователя c авторизацией")
-
 	public static void getOrderWithAuthorization(User user) {
 		String accessToken = UserApi.simpleLogin(user);
 

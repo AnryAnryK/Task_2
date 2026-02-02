@@ -1,6 +1,5 @@
 package New;
 
-import New.config.RequestSpecConfig;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 
@@ -15,7 +14,7 @@ public class UserApi {
 	@Step("создание уникального юзера")
 	public static String createNewUniqeUserPositiveTest(User user) {
 		return
-//				RequestSpecConfig.getSpec()  // спека НЕ работает, как ни старался
+//				RequestSpecConfig.getSpec()  // спека НЕ работает
 				given()
 						.header("Content-type", "application/json")
 						.log().all()

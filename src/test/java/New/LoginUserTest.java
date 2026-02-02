@@ -29,7 +29,7 @@ public class LoginUserTest extends BaseTest {
 
 	private static Stream<Arguments> credentialsProvider() {
 		return Stream.of(
-				Arguments.of(null, null, null)
+				Arguments.of("", "", "")
 		);
 	}
 }

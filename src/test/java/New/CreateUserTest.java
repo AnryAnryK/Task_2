@@ -17,14 +17,6 @@ public class CreateUserTest extends BaseTest {
 
 	String accessToken;
 
-	private static Stream<Arguments> credentialsProvider() {
-		return Stream.of(
-				Arguments.of("email155@mail.com", "email155@mail", null),
-				Arguments.of("email155@mail.com", null, "email155"),
-				Arguments.of(null, "email155@mail", "email155")
-		);
-	}
-
 	@Test
 	@Description("Создать нового уникального Пользователя")
 	public void createNewUniqueUserPositiveTest() {
@@ -57,5 +49,13 @@ public class CreateUserTest extends BaseTest {
 				.log().all()
 				.assertThat().body("success", equalTo(false))
 				.assertThat().body("message", equalTo("Email, password and name are required fields"));
+	}
+
+	private static Stream<Arguments> credentialsProvider() {
+		return Stream.of(
+				Arguments.of("email155@mail.com", "email155@mail", ""),
+				Arguments.of("email155@mail.com", "", "email155"),
+				Arguments.of("", "email155@mail", "email155")
+		);
 	}
 }
